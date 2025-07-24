@@ -18,6 +18,10 @@
 
     <!-- Form Post -->
     <div class="post-form">
+      <div id="profile">
+        <label>Nama Anda: </label>
+        <input type="text" id="usernameInput" placeholder="Isi nama kamu..." onchange="simpanNama()">
+      </div>
       <textarea id="postText" rows="3" placeholder="Apa yang kamu pikirkan?"></textarea><br>
       <input type="file" id="postImage"><br>
       <button onclick="buatPostingan()">Posting</button>
