@@ -62,3 +62,8 @@ function tambahPostingan(teks) {
   `;
   document.getElementById('beranda').prepend(elemen);
 }
+
+function simpanNama() {
+  const nama = document.getElementById('usernameInput').value;
+  localStorage.setItem('username', nama);
+}
