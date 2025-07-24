@@ -20,14 +20,16 @@ function tampilkanPostingan() {
 function buatPostingan() {
   const teks = document.getElementById('postText').value;
   const gambarInput = document.getElementById('postImage');
+  const nama = localStorage.getItem('username') || "Anonim";
+
   if (!teks && !gambarInput.files.length) return;
 
   const reader = new FileReader();
   reader.onload = function () {
     const gambar = gambarInput.files.length ? reader.result : null;
-    const waktu = new Date().toLocaleString('id-ID'); // ⬅️ Tambahkan ini
+    const waktu = new Date().toLocaleString('id-ID');
 
-    dataPostingan.push({ teks, gambar, like: 0, waktu }); // ⬅️ Simpan waktu
+    dataPostingan.push({ teks, gambar, like: 0, waktu, nama });
 
     localStorage.setItem('postingan', JSON.stringify(dataPostingan));
     document.getElementById('postText').value = '';
@@ -41,7 +43,6 @@ function buatPostingan() {
     reader.onload();
   }
 }
-
 
 function likePosting(index) {
   dataPostingan[index].like++;
