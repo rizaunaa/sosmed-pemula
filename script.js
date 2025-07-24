@@ -67,3 +67,14 @@ function simpanNama() {
   const nama = document.getElementById('usernameInput').value;
   localStorage.setItem('username', nama);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  // isi nama dari localStorage kalau ada
+  const simpananNama = localStorage.getItem('username');
+  if (simpananNama) {
+    document.getElementById('usernameInput').value = simpananNama;
+  }
+
+  // Lanjutkan fungsi awal kamu
+  loadPostingan();
+});
