@@ -7,11 +7,13 @@ function tampilkanPostingan() {
     const div = document.createElement('div');
     div.className = 'post';
     div.innerHTML = `
+      <strong>${post.nama}</strong>
       <p>${post.teks}</p>
       ${post.gambar ? `<img src="${post.gambar}" alt="Gambar Postingan">` : ''}
-      <span class="timestamp">${post.waktu || ''}</span> <!-- ⬅️ Tambah baris ini -->
+      <span class="timestamp">${post.waktu || ''}</span>
       <span class="like-btn" onclick="likePosting(${dataPostingan.length - 1 - index})">❤️ ${post.like || 0} Suka</span>
     `;
+
 
     timeline.appendChild(div);
   });
